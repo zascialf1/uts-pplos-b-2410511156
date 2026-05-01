@@ -27,7 +27,7 @@ const authProxy = require('./routes/authProxy');
 const pengaduanProxy = require('./routes/pengaduanProxy');
 const disposisiProxy = require('./routes/disposisiProxy');
 
-app.use('/auth', authProxy);
+app.use('/auth', require('./routes/authProxy'));
 app.use('/pengaduan', pengaduanProxy);
 app.use('/disposisi', disposisiProxy);
 

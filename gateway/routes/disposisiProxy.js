@@ -1,5 +1,7 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
+const express = require('express');
+const router = express.Router();
 const jwt = require('jsonwebtoken');
+const axios = require('axios');
 require('dotenv').config();
 
 const verifyToken = (req, res, next) => {
@@ -17,20 +19,26 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-const proxy = createProxyMiddleware({
-    target: process.env.DISPOSISI_SERVICE_URL,
-    changeOrigin: true,
-    on: {
-        error: (err, req, res) => {
-            res.status(500).json({ status: 'error', message: 'Disposisi service tidak tersedia' });
+router.use(verifyToken);
+
+router.use(async (req, res) => {
+    try {
+        const url = `http://localhost:3003${req.originalUrl}`;
+        const response = await axios({
+            method: req.method,
+            url: url,
+            params: req.query,
+            data: req.body,
+            headers: { 'Content-Type': 'application/json' }
+        });
+        res.status(response.status).json(response.data);
+    } catch (err) {
+        if (err.response) {
+            res.status(err.response.status).json(err.response.data);
+        } else {
+            res.status(500).json({ status: 'error', message: err.message });
         }
     }
 });
-
-const express = require('express');
-const router = express.Router();
-
-router.use(verifyToken);
-router.use(proxy);
 
 module.exports = router;

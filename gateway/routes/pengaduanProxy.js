@@ -21,9 +21,9 @@ const verifyToken = (req, res, next) => {
 
 router.use(verifyToken);
 
-router.all('/', async (req, res) => {
+router.use(async (req, res) => {
     try {
-        const url = `http://127.0.0.1:3002/pengaduan${req.path === '/' ? '' : req.path}`;
+        const url = `http://127.0.0.1:3002${req.originalUrl}`;
         const response = await axios({
             method: req.method,
             url: url,
