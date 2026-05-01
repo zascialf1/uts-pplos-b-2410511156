@@ -1,0 +1,432 @@
+{
+  "info": {
+    "_postman_id": "95ba48f3-70d5-406e-b067-803b37bd8ab1",
+    "name": "PPLOS-B_2410511156",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52802339",
+    "_collection_link": "https://go.postman.co/collection/52802339-95ba48f3-70d5-406e-b067-803b37bd8ab1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n    \"nama\": \"Karina Aespa\",\r\n    \"email\": \"careena@gmail.com\",\r\n    \"password\": \"aespaaah\",\r\n    \"role\": \"mahasiswa\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"ronaldo123@gmail.com\",\r\n    \"password\": \"rorokyutt\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "refresh token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzc3NjI3Mzk5LCJleHAiOjE3NzgyMzIxOTl9.llmXriqwOgRdhtEoUROJGNhNxEBmXAVk_oLQl2LcBZg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/refresh",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "refresh"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzc3NjI3Mzk5LCJleHAiOjE3NzgyMzIxOTl9.llmXriqwOgRdhtEoUROJGNhNxEBmXAVk_oLQl2LcBZg\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ambil semua pengaduan",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzc3NjI3Mzk5LCJleHAiOjE3NzgyMzIxOTl9.llmXriqwOgRdhtEoUROJGNhNxEBmXAVk_oLQl2LcBZg\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buat pengaduan",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"judul\": \"Nilai 0 \",\r\n    \"deskripsi\": \"Nilai semester ganjil 0 semua padahal saya sudah memeuhi kriteria mendapatkan nilai\",\r\n    \"kategori\": \"akademik\",\r\n    \"user_id\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ambil data pengaduan by id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"judul\": \"Nilai 0 \",\r\n    \"deskripsi\": \"Nilai semester ganjil 0 semua padahal saya sudah memeuhi kriteria mendapatkan nilai\",\r\n    \"kategori\": \"akademik\",\r\n    \"user_id\": 5\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update pengaduan",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"status\": \"diproses\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hapus pengaduan",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"status\": \"diproses\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "rating pengaduan",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"rating\": \"4\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pengaduan/5/rating",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pengaduan",
+            "5",
+            "rating"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "disposisi",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJjYXJlZW5hQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2MjczOTksImV4cCI6MTc3NzYyODI5OX0.1Ii5DLOnZenviwXKrYnempGZFRiXJhzFOT13NFxhdnU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"rating\": \"4\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/disposisi",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "disposisi"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "proses disposisi",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyb25hbGRvMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2Mjg0MjUsImV4cCI6MTc3NzYyOTMyNX0.l49RRU_dVv60b69MIfsqnPuty0oEDDPaUzXaxSiktbc",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/disposisi/4/proses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "disposisi",
+            "4",
+            "proses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "disposisi selesai",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyb25hbGRvMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3Nzc2Mjg0MjUsImV4cCI6MTc3NzYyOTMyNX0.l49RRU_dVv60b69MIfsqnPuty0oEDDPaUzXaxSiktbc",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/disposisi/4/selesai",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "disposisi",
+            "4",
+            "selesai"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
