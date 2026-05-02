@@ -113,5 +113,4 @@ cd gateway && npm install && node index.js
 ---
 
 ## Demo Video
-> Link akan diupdate setelah video diunggah ke YouTube
-
+Youtube Link : https://youtu.be/rnfwaSpGjkc 
